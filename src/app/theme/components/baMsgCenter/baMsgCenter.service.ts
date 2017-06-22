@@ -18,26 +18,6 @@ export class BaMsgCenterService {
       image: 'assets/img/shopping-cart.svg',
       text: 'New orders received.',
       time: '5 hrs ago'
-    },
-    {
-      name: 'Andrey',
-      text: 'Andrey replied to your comment.',
-      time: '1 day ago'
-    },
-    {
-      name: 'Nasta',
-      text: 'Today is Nasta\'s birthday.',
-      time: '2 days ago'
-    },
-    {
-      image: 'assets/img/comments.svg',
-      text: 'New comments on your post.',
-      time: '3 days ago'
-    },
-    {
-      name: 'Kostya',
-      text: 'Kostya invited you to join the event.',
-      time: '1 week ago'
     }
   ];
 
@@ -51,31 +31,6 @@ export class BaMsgCenterService {
       name: 'Vlad',
       text: 'You asked, Font Awesome delivers with 40 shiny new icons in version 4.2.',
       time: '2 hrs ago'
-    },
-    {
-      name: 'Kostya',
-      text: 'Want to request new icons? Here\'s how. Need vectors or want to use on the...',
-      time: '10 hrs ago'
-    },
-    {
-      name: 'Andrey',
-      text: 'Explore your passions and discover new ones by getting involved. Stretch your...',
-      time: '1 day ago'
-    },
-    {
-      name: 'Nasta',
-      text: 'Get to know who we are - from the inside out. From our history and culture, to the...',
-      time: '1 day ago'
-    },
-    {
-      name: 'Kostya',
-      text: 'Need some support to reach your goals? Apply for scholarships across a variety of...',
-      time: '2 days ago'
-    },
-    {
-      name: 'Vlad',
-      text: 'Wrap the dropdown\'s trigger and the dropdown menu within .dropdown, or...',
-      time: '1 week ago'
     }
   ];
 

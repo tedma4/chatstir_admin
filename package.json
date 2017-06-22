@@ -1,15 +1,15 @@
 {
-  "name": "ng2-admin",
+  "name": "chatstir",
   "version": "1.0.0",
   "description": "Angular and Bootstrap 4 Admin Template.",
   "author": "Akveo <contact@akveo.com>",
-  "homepage": "http://akveo.github.io/ng2-admin/",
+  "homepage": "http://akveo.github.io/chatstir/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/akveo/ng2-admin.git"
+    "url": "https://github.com/akveo/chatstir.git"
   },
   "bugs": {
-    "url": "https://github.com/akveo/ng2-admin/issues"
+    "url": "https://github.com/akveo/chatstir/issues"
   },
   "license": "MIT",
   "scripts": {
@@ -25,7 +25,7 @@
     "build:prod": "npm run build -- --prod",
     "build:prod:aot": "npm run build:prod -- --aot",
     "build:ci": "npm run build:prod && npm run build:prod:aot",
-    "build:demo": "npm run build:prod:aot -- --base-href \"http://akveo.com/ng2-admin/\"",
+    "build:demo": "npm run build:prod:aot -- --base-href \"http://akveo.com/chatstir/\"",
     "test": "ng test -sr",
     "test:coverage": "npm run clean:coverage && ng test -sr -cc",
     "lint": "ng lint",
@@ -56,6 +56,7 @@
     "amcharts3": "github:amcharts/amcharts3",
     "ammap3": "github:amcharts/ammap3",
     "angular2-datatable": "0.6.0",
+    "angular2-jwt": "^0.2.3",
     "animate.css": "3.5.2",
     "bootstrap": "4.0.0-alpha.6",
     "chart.js": "1.1.1",
@@ -82,7 +83,7 @@
     "ngx-uploader": "2.2.5",
     "normalize.css": "6.0.0",
     "roboto-fontface": "0.7.0",
-    "rxjs": "5.4.0",
+    "rxjs": "^5.4.0",
     "zone.js": "0.8.11"
   },
   "devDependencies": {

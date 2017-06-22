@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {GlobalState} from '../../../global.state';
-
+import {AuthService} from '../../../pages/auth.service'
 @Component({
   selector: 'ba-page-top',
   templateUrl: './baPageTop.html',
@@ -11,8 +11,9 @@ export class BaPageTop {
 
   public isScrolled:boolean = false;
   public isMenuCollapsed:boolean = false;
+  public user = JSON.parse(localStorage.user)
 
-  constructor(private _state:GlobalState) {
+  constructor(private _state:GlobalState,private auth: AuthService) {
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });
@@ -26,5 +27,9 @@ export class BaPageTop {
 
   public scrolledChanged(isScrolled) {
     this.isScrolled = isScrolled;
+  }
+
+  signOut() {
+    this.auth.logout()
   }
 }
