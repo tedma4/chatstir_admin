@@ -2,16 +2,32 @@ export const PAGES_MENU = [
   {
     path: 'pages',
     children: [
-      {path: 'dashboard',data: {menu: {title: 'general.menu.dashboard',icon: 'ion-android-home',selected: false,expanded: false,order: 0}}},
-      {
-        path: 'maps',data: {menu: {title: 'general.menu.maps',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
+      {path: 'dashboard', data: {menu: {title: 'general.menu.dashboard',icon: 'ion-android-home',selected: false,expanded: false,order: 0}}},
+      
+      {path: 'maps', data: {menu: {title: 'general.menu.maps',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
         children: [
-          {path: 'googlemaps',data: {menu: {title: 'general.menu.google_maps',}}},
-          {path: 'leafletmaps',data: {menu: {title: 'general.menu.leaflet_maps',}}},
-          {path: 'bubblemaps',data: {menu: {title: 'general.menu.bubble_maps',}}},
-          {path: 'linemaps',data: {menu: {title: 'general.menu.line_maps',}}}
+          {path: 'googlemaps', data: {menu: {title: 'general.menu.map_dashboard'}}},
+          {path: 'googlemaps', data: {menu: {title: 'general.menu.area_list'}}},
+          {path: 'googlemaps', data: {menu: {title: 'general.menu.area_builder'}}}
+          // {path: 'leafletmaps',data: {menu: {title: 'general.menu.leaflet_maps'}}},
+          // {path: 'bubblemaps',data: {menu: {title: 'general.menu.bubble_maps'}}},
+          // {path: 'linemaps',data: {menu: {title: 'general.menu.line_maps'}}}
         ]
-      }
+      },
+      
+      // {path: 'maps',data: {menu: {title: 'general.menu.chats',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
+      //   children: [
+      //     {path: 'googlemaps',data: {menu: {title: 'general.menu.chat_dashboard'}}},
+      //     {path: 'googlemaps',data: {menu: {title: 'general.menu.chat_list'}}},
+      //     {path: 'googlemaps',data: {menu: {title: 'general.menu.chat_mapview'}}}
+      //   ]
+      // },
+      
+      // {path: 'maps',data: {menu: {title: 'general.menu.users',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
+      //   children: [
+      //     {path: 'googlemaps',data: {menu: {title: 'general.menu.user_dashboard'}}},
+      //   ]
+      // },
     ]
   }
 ];

@@ -1,7 +1,7 @@
 {
   "login": {
-    "title": "Sign in to chatstir",
-    "signup_link": "New to chatstir? Sign up!",
+    "title": "Sign in to Chatstir",
+    "signup_link": "New to Chatstir? Sign up!",
     "email": "Email",
     "password": "Password",
     "sign_in": "Sign in",
@@ -18,7 +18,7 @@
       "option1": "Option 1"
     },
     "menu": {
-      "dashboard": "DashDash",
+      "dashboard": "Dashboard",
       "editors": "Editors",
       "ck_editor": "CKEditor",
       "components": "Components",
@@ -38,6 +38,15 @@
       "basic_tables": "Basic Tables",
       "smart_tables": "Smart Tables",
       "maps": "Maps",
+      "map_dashboard": "Map Dashboard",
+      "area_list": "Area List",
+      "area_builder": "Area Builder",
+      "chats": "Chats",
+      "chat_dashboard": "Chat Dashboard",
+      "chat_list": "Chat List",
+      "chat_mapview": "Chat MapView",
+      "users": "Users",
+      "user_dashboard": "User Dashboard",
       "google_maps": "Google Maps",
       "leaflet_maps": "Leaflet Maps",
       "bubble_maps": "Bubble Maps",

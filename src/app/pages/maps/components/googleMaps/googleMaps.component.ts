@@ -17,8 +17,8 @@ export class GoogleMaps {
     // TODO: do not load this each time as we already have the library after first attempt
     GoogleMapsLoader.load((google) => {
       new google.maps.Map(el, {
-        center: new google.maps.LatLng(44.5403, -78.5463),
-        zoom: 8,
+        center: new google.maps.LatLng(33.5055259, -112.07474560000003),
+        zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
     });

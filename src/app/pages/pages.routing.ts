@@ -15,13 +15,13 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', canActivate: [AuthGuard] },
+      { path: 'maps', loadChildren: './maps/maps.module#MapsModule', canActivate: [AuthGuard] }
       // { path: 'editors', loadChildren: './editors/editors.module#EditorsModule', canActivate: [AuthGuard] },
       // { path: 'components', loadChildren: './components/components.module#ComponentsModule', canActivate: [AuthGuard] },
       // { path: 'charts', loadChildren: './charts/charts.module#ChartsModule', canActivate: [AuthGuard] },
       // { path: 'ui', loadChildren: './ui/ui.module#UiModule', canActivate: [AuthGuard] },
       // { path: 'forms', loadChildren: './forms/forms.module#FormsModule', canActivate: [AuthGuard] },
       // { path: 'tables', loadChildren: './tables/tables.module#TablesModule', canActivate: [AuthGuard] },
-      { path: 'maps', loadChildren: './maps/maps.module#MapsModule', canActivate: [AuthGuard] }
     ],canActivate: [AuthGuard] 
   }
 ];

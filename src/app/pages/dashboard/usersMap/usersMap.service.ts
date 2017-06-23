@@ -17,7 +17,7 @@ export class UsersMapService {
 
       dataProvider: {
         map: 'worldLow',
-        zoomLevel: 3.5,
+        zoomLevel: 10,
         zoomLongitude: 10,
         zoomLatitude: 52,
         areas: [
