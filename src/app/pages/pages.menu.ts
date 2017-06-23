@@ -8,7 +8,7 @@ export const PAGES_MENU = [
         children: [
           {path: 'googlemaps', data: {menu: {title: 'general.menu.map_dashboard'}}},
           {path: 'googlemaps', data: {menu: {title: 'general.menu.area_list'}}},
-          {path: 'googlemaps', data: {menu: {title: 'general.menu.area_builder'}}}
+          {path: 'googlemaps', data: {menu: {title: 'general.menu.area_builder', url: "/#/pages/dashboard"}}}
           // {path: 'leafletmaps',data: {menu: {title: 'general.menu.leaflet_maps'}}},
           // {path: 'bubblemaps',data: {menu: {title: 'general.menu.bubble_maps'}}},
           // {path: 'linemaps',data: {menu: {title: 'general.menu.line_maps'}}}
