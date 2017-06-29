@@ -3,6 +3,14 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
       {path: 'dashboard', data: {menu: {title: 'general.menu.dashboard',icon: 'ion-android-home',selected: false,expanded: false,order: 0}}},
+
+      {path: 'areas', data: {menu: {title: 'general.menu.areas', icon: 'ion-ios-location-outline', selected: false, expanded: false, order: 14 }},
+      children: [
+        {path: 'area_dashboard', data: {menu: {title: 'general.menu.area_dashboard'}}},
+        {path: 'area_list', data: {menu: {title: 'general.menu.area_list'}}},
+        {path: 'area_builder', data: {menu: {title: 'general.menu.area_builder'}}},
+      ]
+    }
       
       // {path: 'maps', data: {menu: {title: 'general.menu.maps',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
       //   children: [
@@ -14,11 +22,6 @@ export const PAGES_MENU = [
       //     // {path: 'linemaps',data: {menu: {title: 'general.menu.line_maps'}}}
       //   ]
       // },
-      {path: 'areas', data: {menu: {title: 'general.menu.areas', icon: 'ion-ios-location-outline', selected: false, expanded: false, order: 14 }},
-      children: [
-        {path: 'area_list', data: {menu: {title: 'general.menu.area_list'}}}
-      ]
-    }
       
       // {path: 'maps',data: {menu: {title: 'general.menu.chats',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
       //   children: [

@@ -7,6 +7,8 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { routing } from './areas.routing';
 import { Areas } from './areas.component';
 import { AreaList } from "./components/areaList/areaList.component"
+import { AreaDashboard } from "./components/areaDashboard/areaDashboard.component"
+import { AreaBuilder } from "./components/areaBuilder/areaBuilder.component"
 import { AreasService } from "./areas.service"
 
 @NgModule({
@@ -19,7 +21,10 @@ import { AreasService } from "./areas.service"
   ],
   declarations: [
     Areas,
-    AreaList
+    AreaList,
+    AreaDashboard,
+    AreaBuilder,
+
     
   ],
   providers: [

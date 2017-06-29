@@ -29,10 +29,10 @@ export class AreaList implements OnInit{
       confirmDelete: true
     },
     columns: {
-      id: {
-        title: 'ID',
-        type: 'number'
-      },
+      // id: {
+      //   title: 'ID',
+      //   type: 'string'
+      // },
       title: {
         title: 'Title',
         type: 'string'
@@ -43,7 +43,7 @@ export class AreaList implements OnInit{
       },
       dot_count: {
         title: 'Dot Count',
-        type: 'string'
+        type: 'number'
       }
     }
   };
@@ -71,6 +71,14 @@ export class AreaList implements OnInit{
   ngAfterViewInit() {
   	// Place things that change the screen inside ngAfterViewInit
     
+  }
+
+  onEditConfirm(event): void {
+  	if (window.confirm('Done?')){
+  		event.confirm.resolve();
+  	}else {
+  		event.confirm.reject();
+  	}
   }
 
   onDeleteConfirm(event): void {
