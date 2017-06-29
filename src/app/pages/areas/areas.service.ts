@@ -6,16 +6,18 @@ import { Area } from "./area"
 
 @Injectable()
 export class AreasService {
-	private auth_token = JSON.parse(localStorage.auth_token)
-	private headers = new Headers({'Content-Type': 'application/json', "AUTHORIZATION": this.auth_token});
+	private auth_token = localStorage.auth_token
+	private headers = new Headers({"AUTHORIZATION": this.auth_token});
 	private url = "http://localhost:4000/"
 
 	constructor(private http: Http) {}
  
 	getAreas(): Promise<Area[]> {
-		return this.http.get(this.url + "areas")
+    // console.log(this.headers)
+		return this.http.get(this.url + "areas", { headers: this.headers } )
      .toPromise()
-     .then(response => response.json().data as Area[])
+     .then(response => response.json() as Area[])
+       // response.json().data as Area[])
      .catch(this.handleError);
 	}
 

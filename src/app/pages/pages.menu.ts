@@ -4,16 +4,21 @@ export const PAGES_MENU = [
     children: [
       {path: 'dashboard', data: {menu: {title: 'general.menu.dashboard',icon: 'ion-android-home',selected: false,expanded: false,order: 0}}},
       
-      {path: 'maps', data: {menu: {title: 'general.menu.maps',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
-        children: [
-          {path: 'googlemaps', data: {menu: {title: 'general.menu.map_dashboard'}}},
-          {path: 'googlemaps', data: {menu: {title: 'general.menu.area_list'}}},
-          {path: 'googlemaps', data: {menu: {title: 'general.menu.area_builder', url: "/#/pages/dashboard"}}}
-          // {path: 'leafletmaps',data: {menu: {title: 'general.menu.leaflet_maps'}}},
-          // {path: 'bubblemaps',data: {menu: {title: 'general.menu.bubble_maps'}}},
-          // {path: 'linemaps',data: {menu: {title: 'general.menu.line_maps'}}}
-        ]
-      },
+      // {path: 'maps', data: {menu: {title: 'general.menu.maps',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
+      //   children: [
+      //     {path: 'googlemaps', data: {menu: {title: 'general.menu.map_dashboard'}}},
+      //     {path: 'googlemaps', data: {menu: {title: 'general.menu.area_list'}}},
+      //     {path: 'googlemaps', data: {menu: {title: 'general.menu.area_builder', url: "/#/pages/dashboard"}}}
+      //     // {path: 'leafletmaps',data: {menu: {title: 'general.menu.leaflet_maps'}}},
+      //     // {path: 'bubblemaps',data: {menu: {title: 'general.menu.bubble_maps'}}},
+      //     // {path: 'linemaps',data: {menu: {title: 'general.menu.line_maps'}}}
+      //   ]
+      // },
+      {path: 'areas', data: {menu: {title: 'general.menu.areas', icon: 'ion-ios-location-outline', selected: false, expanded: false, order: 14 }},
+      children: [
+        {path: 'area_list', data: {menu: {title: 'general.menu.area_list'}}}
+      ]
+    }
       
       // {path: 'maps',data: {menu: {title: 'general.menu.chats',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
       //   children: [

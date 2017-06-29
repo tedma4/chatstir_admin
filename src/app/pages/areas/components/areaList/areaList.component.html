@@ -1,0 +1,16 @@
+
+<!-- 
+<ba-card title="Area List">
+  <div class="google-maps"></div>
+</ba-card>
+ -->
+
+<div class="widgets">
+
+  <div class="row">
+    <ba-card title="Area List" baCardClass="with-scroll" class="smart-table-container">
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+    </ba-card>
+  </div>
+
+</div>

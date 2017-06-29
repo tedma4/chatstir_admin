@@ -1,4 +1,4 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { Maps } from './maps.component';
 import { GoogleMaps } from './components/googleMaps/googleMaps.component';
