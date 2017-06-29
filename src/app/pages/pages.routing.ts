@@ -15,7 +15,8 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', canActivate: [AuthGuard] },
-      { path: 'areas', loadChildren: './areas/areas.module#AreasModule', canActivate: [AuthGuard]}
+      { path: 'areas', loadChildren: './areas/areas.module#AreasModule', canActivate: [AuthGuard]},
+      { path: 'chats', loadChildren: './chats/chats.module#ChatsModule', canActivate: [AuthGuard]},
       
       // { path: 'maps', loadChildren: './maps/maps.module#MapsModule', canActivate: [AuthGuard] },
       // { path: 'editors', loadChildren: './editors/editors.module#EditorsModule', canActivate: [AuthGuard] },

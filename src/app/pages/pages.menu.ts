@@ -10,7 +10,15 @@ export const PAGES_MENU = [
         {path: 'area_list', data: {menu: {title: 'general.menu.area_list'}}},
         {path: 'area_builder', data: {menu: {title: 'general.menu.area_builder'}}},
       ]
-    }
+    },
+
+      {path: 'chats', data: {menu: {title: 'general.menu.chats', icon: 'ion-ios-location-outline', selected: false, expanded: false, order: 14 }},
+      children: [
+        {path: 'chat_dashboard', data: {menu: {title: 'general.menu.chat_dashboard'}}},
+        {path: 'chat_list', data: {menu: {title: 'general.menu.chat_list'}}},
+        {path: 'chat_mapview', data: {menu: {title: 'general.menu.chat_mapview'}}},
+      ]
+    },
       
       // {path: 'maps', data: {menu: {title: 'general.menu.maps',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
       //   children: [
