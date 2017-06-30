@@ -14,9 +14,7 @@ const routes: Routes = [
       {path: 'chat_dashboard', component: ChatDashboard },
       {path: 'chat_list', component: ChatList },
       {path: 'chat_mapview', component: ChatMapview },
-      // { path: 'googlemaps', component: GoogleMaps },
-      // { path: 'chat_list', compnoent: chatList},
-      // { path: 'chat_builder', compnoent: chatBuilder}
+      
     ]
   }
 ];

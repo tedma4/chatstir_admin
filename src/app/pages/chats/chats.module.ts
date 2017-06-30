@@ -24,13 +24,10 @@ import { ChatsService } from "./chats.service"
     ChatList,
     ChatDashboard,
     ChatMapview,
-
     
   ],
   providers: [
     ChatsService
-    // BubbleMapsService,
-    // LineMapsService
 
   ]
 })

@@ -48,6 +48,8 @@
       "chat_mapview": "Chat MapView",
       "users": "Users",
       "user_dashboard": "User Dashboard",
+      "user_mapview": "User MapView",
+      "user_list": "User List",
       "google_maps": "Google Maps",
       "leaflet_maps": "Leaflet Maps",
       "bubble_maps": "Bubble Maps",

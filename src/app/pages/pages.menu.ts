@@ -19,6 +19,14 @@ export const PAGES_MENU = [
         {path: 'chat_mapview', data: {menu: {title: 'general.menu.chat_mapview'}}},
       ]
     },
+
+      {path: 'users', data: {menu: {title: 'general.menu.users', icon: 'ion-ios-location-outline', selected: false, expanded: false, order: 14 }},
+      children: [
+        {path: 'user_dashboard', data: {menu: {title: 'general.menu.user_dashboard'}}},
+        {path: 'user_list', data: {menu: {title: 'general.menu.user_list'}}},
+        {path: 'user_mapview', data: {menu: {title: 'general.menu.user_mapview'}}},
+      ]
+    },
       
       // {path: 'maps', data: {menu: {title: 'general.menu.maps',icon: 'ion-ios-location-outline',selected: false,expanded: false,order: 2,}},
       //   children: [
