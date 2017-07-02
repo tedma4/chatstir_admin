@@ -17,7 +17,6 @@ export class UsersService {
 		return this.http.get(this.url + "users", { headers: this.headers } )
      .toPromise()
      .then(response => response.json() as User[])
-       // response.json().data as User[])
      .catch(this.handleError);
 	}
 
@@ -25,7 +24,7 @@ export class UsersService {
     return this.http
       .post(this.url + "users", JSON.stringify({users: {name: name}}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data as User)
+      .then(res => res.json() as User)
       .catch(this.handleError);
   }
 
@@ -44,10 +43,10 @@ export class UsersService {
       .catch(this.handleError);
   }
 
-  getUser(id: number): Promise<User> {
-    return this.http.get(this.url)
+  getUser(id: string): Promise<User> {
+    return this.http.get(this.url + "users/" + id, {headers: this.headers})
       .toPromise()
-      .then(response => response.json().data as User)
+      .then(response => response.json() as User)
       .catch(this.handleError);
   }
 

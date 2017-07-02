@@ -10,6 +10,7 @@ import { AreaList } from "./components/areaList/areaList.component"
 import { AreaDashboard } from "./components/areaDashboard/areaDashboard.component"
 import { AreaBuilder } from "./components/areaBuilder/areaBuilder.component"
 import { AreasService } from "./areas.service"
+import { UsersService } from "../users/users.service"
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { AreasService } from "./areas.service"
     
   ],
   providers: [
-    AreasService
+    AreasService,
+    UsersService
     // BubbleMapsService,
     // LineMapsService
 

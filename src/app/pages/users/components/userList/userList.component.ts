@@ -29,15 +29,19 @@ export class UserList implements OnInit{
       confirmDelete: true
     },
     columns: {
-      title: {
-        title: 'Title',
+      first_name: {
+        title: 'First Name',
         type: 'string'
       },
-      message_count: {
-        title: 'Message Count',
+      last_name: {
+        title: 'Last Name',
         type: 'number'
       },
-      user_id: {
+      email: {
+        title: 'Email',
+        type: 'number'
+      },
+      id: {
         title: 'User Id',
         type: 'string'
       }

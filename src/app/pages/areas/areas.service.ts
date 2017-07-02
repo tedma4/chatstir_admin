@@ -3,6 +3,7 @@ import { Headers, Http } from "@angular/http"
 import 'rxjs/add/operator/toPromise';
 
 import { Area } from "./area"
+import { UserLocation } from "./userLocation"
 
 @Injectable()
 export class AreasService {
@@ -20,6 +21,13 @@ export class AreasService {
        // response.json().data as Area[])
      .catch(this.handleError);
 	}
+
+  getDots(): Promise<UserLocation[]> {
+    return this.http.get(this.url + "user_locations", {headers: this.headers }) 
+    .toPromise()
+    .then(response => response.json() as UserLocation[])
+    .catch(this.handleError)
+  }
 
   create(title: string): Promise<Area> {
     return this.http
