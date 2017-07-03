@@ -11,6 +11,7 @@ import { AreaDashboard } from "./components/areaDashboard/areaDashboard.componen
 import { AreaBuilder } from "./components/areaBuilder/areaBuilder.component"
 import { AreasService } from "./areas.service"
 import { UsersService } from "../users/users.service"
+import { InlineForm } from "./components/areaBuilder/components/inlineForm/inlineForm.component"
 
 @NgModule({
   imports: [
@@ -25,8 +26,8 @@ import { UsersService } from "../users/users.service"
     AreaList,
     AreaDashboard,
     AreaBuilder,
+    InlineForm,
 
-    
   ],
   providers: [
     AreasService,

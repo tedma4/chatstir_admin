@@ -2,6 +2,8 @@ import {Component, ElementRef} from '@angular/core';
 import * as GoogleMapsLoader from 'google-maps';
 import { AreasService } from "../../areas.service"
 import { Area } from "../../area"
+GoogleMapsLoader.URL = 'https://maps.googleapis.com/maps/api/js';
+GoogleMapsLoader.LIBRARIES = ['drawing']
 
 @Component({
   selector: 'area-builder',
@@ -9,8 +11,8 @@ import { Area } from "../../area"
   templateUrl: './areaBuilder.component.html',
 })
 export class AreaBuilder {
-  areas: any;
-  selectedArea: Area;
+  private areas: any;
+  private selectedArea: Area;
   private google:any;
   private map:any;
   private drawingManager:any;;
@@ -27,7 +29,7 @@ export class AreaBuilder {
     .then((data) => {  
       this.areas = data
       // console.log(this.areas)
-      this.setPolygons();
+      this.setPolygons();  
 
     })
   }
@@ -36,7 +38,6 @@ export class AreaBuilder {
     let el = this._elementRef.nativeElement.querySelector('.google-maps');
 
     // TODO: do not load this each time as we already have the library after first attempt
-    GoogleMapsLoader.LIBRARIES = ['geometry', 'drawing'];
     GoogleMapsLoader.load((google) => {
       this.google = google;
       this.map = new google.maps.Map(el, {
@@ -93,18 +94,18 @@ export class AreaBuilder {
           return latlng
         });
       }
-      var thing = document.getElementById("areaForm")
+      // var thing = document.getElementById("areaForm")
       // loop to add the input elements after an overlay is created
       this.polygon_bounds.forEach((point) =>
         {
-          var lat = this.polygon_bounds[point][0];
-          var lng = this.polygon_bounds[point][1];
-          var point_input = document.createElement("input");
+          var lat = point[0];
+          var lng = point[1];
+          // var point_input = document.createElement("input");
           // point_input.setAttribute("type", "text")
           // point_input.setAttribute("name", "area[area_profile][]")
           // point_input.setAttribute("value", [lat, lng])
-          thing.appendChild(point_input)
-        });
+          // thing.appendChild(point_input)
+      });
       // infowindow.open(map, event.overlay);
     });
     this.levelColor = {
@@ -157,7 +158,6 @@ export class AreaBuilder {
           '</p>';
       // Iterate over the vertices.
       vertices.forEach((i) => {
-        console.log(i)
         contentString += '<p style="color:black;">' + 
           'Coordinate ' + i + ':</p>'
       })
