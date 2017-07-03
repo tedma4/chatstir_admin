@@ -31,22 +31,6 @@ export class AreaDashboard {
     })
   }
 
-  public getUser(userLoc: any, infoWindow: any): void {
-    this.usersService.getUser(userLoc.id)
-    .then(
-      (data) => {
-        this.selectedDot = data;
-
-        // var contentString = "stuff"
-        var contentString = '<p style="color:black;">' + this.selectedDot.user_name + '</p>' + '<IMG BORDER="0" WIDTH=80px HEIGHT=80px ALIGN="Left" SRC="' + this.selectedDot.thumb_avatar + '">';
-        // Replace the info window's content and position.
-        infoWindow.setContent(contentString);
-        infoWindow.setPosition(new this.google.maps.LatLng(userLoc.location[1], userLoc.location[0]));
-        infoWindow.open(this.map);
-        return infoWindow
-    })
-  }
-
   ngAfterViewInit(): void{
     let el = this._elementRef.nativeElement.querySelector('.google-maps');
 
@@ -90,6 +74,22 @@ export class AreaDashboard {
         this.getUser(feature, infoWindow)
     });
     return marker;
+  }
+
+  public getUser(userLoc: any, infoWindow: any): void {
+    this.usersService.getUser(userLoc.id)
+    .then(
+      (data) => {
+        this.selectedDot = data;
+
+        // var contentString = "stuff"
+        var contentString = '<p style="color:black;">' + this.selectedDot.user_name + '</p>' + '<IMG BORDER="0" WIDTH=80px HEIGHT=80px ALIGN="Left" SRC="' + this.selectedDot.thumb_avatar + '">';
+        // Replace the info window's content and position.
+        infoWindow.setContent(contentString);
+        infoWindow.setPosition(new this.google.maps.LatLng(userLoc.location[1], userLoc.location[0]));
+        infoWindow.open(this.map);
+        return infoWindow
+    })
   }
 
 }
