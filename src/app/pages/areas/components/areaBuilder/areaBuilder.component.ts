@@ -1,9 +1,11 @@
-import {Component, ElementRef} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import * as GoogleMapsLoader from 'google-maps';
 import { AreasService } from "../../areas.service"
 import { Area } from "../../area"
 GoogleMapsLoader.URL = 'https://maps.googleapis.com/maps/api/js';
 GoogleMapsLoader.LIBRARIES = ['drawing']
+import { NgUploaderOptions } from 'ngx-uploader';
+import {InlineForm} from "./components/inlineForm/inlineForm.component"
 
 @Component({
   selector: 'area-builder',
@@ -11,25 +13,45 @@ GoogleMapsLoader.LIBRARIES = ['drawing']
   templateUrl: './areaBuilder.component.html',
 })
 export class AreaBuilder {
+
+  @ViewChild(InlineForm)
+  private _inlineForm: InlineForm;
+
   private areas: any;
-  private selectedArea: Area;
+
   private google:any;
   private map:any;
   private drawingManager:any;;
   private polygon_bounds:any;
-  private levelColor:any
+  private levelColor:any;
+  public defaultPicture = 'assets/img/theme/no-photo.png';
+  public profile:any = {
+    picture: 'assets/img/theme/no-photo.png'
+  };
+  public uploaderOptions:NgUploaderOptions = {
+    // url: 'http://website.com/upload'
+    url: '',
+  };
+
+  public fileUploaderOptions:NgUploaderOptions = {
+    // url: 'http://website.com/upload'
+    url: '',
+  };
 
   constructor(
-    private _elementRef:ElementRef,
-    private areasService: AreasService) {}
+    private _elementRef: ElementRef,
+    private areasService: AreasService) {
+    // console.log(this._inlineForm)
+
+  }
 
   public getAreas(): void {
     this.areasService
     .getAreas()
     .then((data) => {  
       this.areas = data
-      // console.log(this.areas)
       this.setPolygons();  
+      console.log(this._inlineForm)
 
     })
   }
@@ -74,7 +96,7 @@ export class AreaBuilder {
 
     this.drawingManager.setMap(this.map);
 
-    google.maps.event.addListener(this.drawingManager, 'overlaycomplete', function(event) {
+    google.maps.event.addListener(this.drawingManager, 'overlaycomplete', (event) => {
       if (event.type == 'rectangle') {
         var bounds = event.overlay.getBounds();
         this.polygon_bounds = [
@@ -94,18 +116,23 @@ export class AreaBuilder {
           return latlng
         });
       }
-      // var thing = document.getElementById("areaForm")
+      // let form = this._elementRef.nativeElement.querySelector('#areaForm');
+      // let form = document.getElementById("areaForm")
       // loop to add the input elements after an overlay is created
-      this.polygon_bounds.forEach((point) =>
-        {
-          var lat = point[0];
-          var lng = point[1];
+      // this.hideInputs = false
+      let variable = this.polygon_bounds
+      this._inlineForm.hideInputs(variable)
+      
+      // this.polygon_bounds.forEach((point) =>
+        // {
+          // let lat = String(point[0]);
+          // let lng = String(point[1]);
           // var point_input = document.createElement("input");
-          // point_input.setAttribute("type", "text")
-          // point_input.setAttribute("name", "area[area_profile][]")
-          // point_input.setAttribute("value", [lat, lng])
-          // thing.appendChild(point_input)
-      });
+          // point_input.setAttribute("type", "text");
+          // point_input.setAttribute("name", "area[area_profile][]");
+          // point_input.setAttribute("value", lat + ','  + lng)
+          // form.appendChild(point_input)
+      // });
       // infowindow.open(map, event.overlay);
     });
     this.levelColor = {
@@ -168,6 +195,7 @@ export class AreaBuilder {
       infoWindow.open(this.map);
     });
   }
+
 }
 
 
