@@ -33,16 +33,9 @@ export class AreaBuilder {
     url: '',
   };
 
-  public fileUploaderOptions:NgUploaderOptions = {
-    // url: 'http://website.com/upload'
-    url: '',
-  };
-
   constructor(
     private _elementRef: ElementRef,
     private areasService: AreasService) {
-    // console.log(this._inlineForm)
-
   }
 
   public getAreas(): void {
@@ -50,9 +43,7 @@ export class AreaBuilder {
     .getAreas()
     .then((data) => {  
       this.areas = data
-      this.setPolygons();  
-      console.log(this._inlineForm)
-
+      this.setPolygons();
     })
   }
 
@@ -120,8 +111,7 @@ export class AreaBuilder {
       // let form = document.getElementById("areaForm")
       // loop to add the input elements after an overlay is created
       // this.hideInputs = false
-      let variable = this.polygon_bounds
-      this._inlineForm.hideInputs(variable)
+      this._inlineForm.hideInputs(this.polygon_bounds)
       
       // this.polygon_bounds.forEach((point) =>
         // {

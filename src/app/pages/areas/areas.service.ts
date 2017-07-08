@@ -8,7 +8,7 @@ import { UserLocation } from "./userLocation"
 @Injectable()
 export class AreasService {
 	private auth_token = localStorage.auth_token
-	private headers = new Headers({"AUTHORIZATION": this.auth_token});
+	private headers = new Headers({"AUTHORIZATION": this.auth_token, "content-type": "application/json"});
 	private url = "http://localhost:4000/"
 
 	constructor(private http: Http) {}
@@ -29,9 +29,9 @@ export class AreasService {
     .catch(this.handleError)
   }
 
-  create(title: string): Promise<Area> {
+  create(fields: any): Promise<Area> {
     return this.http
-      .post(this.url + "areas", JSON.stringify({areas: {name: name}}), {headers: this.headers})
+      .post(this.url + "areas", JSON.stringify(fields), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Area)
       .catch(this.handleError);

@@ -4,7 +4,7 @@ import {AuthService} from "../auth.service"
 import { Router } from '@angular/router';
 
 interface Credentials { 
-  emali: string,
+  email: string,
   password: string
 }
 
@@ -16,24 +16,24 @@ interface Credentials {
 })
 export class Login {
   public credentials: Credentials;
-  public form:FormGroup;
+  public loginForm:FormGroup;
   public email:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
   
   constructor(fb:FormBuilder, public auth: AuthService, private router: Router) {
-    this.form = fb.group({
+    this.loginForm = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
 
-    this.email = this.form.controls['email'];
-    this.password = this.form.controls['password'];
+    this.email = this.loginForm.controls['email'];
+    this.password = this.loginForm.controls['password'];
   }
 
   onSubmit(credentials):void {
     this.submitted = true;
-    if (this.form.valid) {
+    if (this.loginForm.valid) {
       this.auth.login({user: credentials})
       .subscribe(
         // We're assuming the response will be an object
