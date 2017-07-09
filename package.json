@@ -19,6 +19,7 @@
   "scripts": {
     "ng": "ng",
     "dev": "ng serve",
+    "postinstall": "ng build --aot -prod",
     "changelog": "standard-changelog",
     "start": "node server.js",
     "start:hmr": "ng serve --hmr",
