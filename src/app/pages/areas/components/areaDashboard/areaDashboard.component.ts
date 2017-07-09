@@ -4,6 +4,8 @@ import { UserLocation } from "../../userLocation"
 import { AreasService } from "../../areas.service"
 import { UsersService } from "../../../users/users.service"
 import { User } from "../../../users/user"
+GoogleMapsLoader.URL = 'https://maps.googleapis.com/maps/api/js';
+GoogleMapsLoader.LIBRARIES = ['drawing']
 
 @Component({
   selector: 'area-dashboard',

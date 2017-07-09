@@ -1,5 +1,7 @@
 import {Component, ElementRef} from '@angular/core';
 import * as GoogleMapsLoader from 'google-maps';
+GoogleMapsLoader.URL = 'https://maps.googleapis.com/maps/api/js';
+GoogleMapsLoader.LIBRARIES = ['drawing']
 
 @Component({
   selector: 'chat-dashboard',
